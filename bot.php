@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			
+			global $groupIdlog;
 			$text = $event['message']['text'];
 			// Get replyToken
 			//$replyToken = $event['replyToken'];
@@ -22,7 +22,8 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			// Build message to reply back
 		 	$groupId = $event['source']['groupId'];
-			global $groupIdlog = $groupId;
+			
+			$groupIdlog = $groupId;
 			$Topic = "NodeMCU1" ;
 			getMqttfromlineMsg($Topic,$text);
 
