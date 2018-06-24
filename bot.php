@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			// Build message to reply back
 		 	$groupId = $event['source']['groupId'];
-			$groupIdlog = $groupId;
+			global $groupIdlog = $groupId;
 			$Topic = "NodeMCU1" ;
 			getMqttfromlineMsg($Topic,$text);
 
