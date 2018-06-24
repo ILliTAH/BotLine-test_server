@@ -1,10 +1,10 @@
  <?php
   
-function send_LINE($msg,$groupId){
+function send_LINE($msg,$groupIdlog){
  $access_token = 'DGuuVccwqxYn+uroRdkiLBkYddWELZNxA03jZ36rKVwFpjutP9c56kLU8J9+Mf1/aS9Q4PoGYUEj7RKhjaIIoel4wRL35bQgbijVJBRe2LtiCZg3WX2VStSqATXMYVtSbowItcUApiUvxqKt1jqSTQdB04t89/1O/w1cDnyilFU='; 
   $takeid = [
     'type' => 'text',
-    'text' => $groupId
+    'text' => $groupIdlog
 
   ];
   $messages = [

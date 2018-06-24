@@ -6,7 +6,7 @@ require("line.php");
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-$groupId;
+$groupIdlog;
 if (!is_null($events['events'])) {
 	echo "line bot";
 	// Loop through each event
@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			// Build message to reply back
 		 	$groupId = $event['source']['groupId'];
-
+			$groupIdlog = $groupId;
 			$Topic = "NodeMCU1" ;
 			getMqttfromlineMsg($Topic,$text);
 
@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 
 if (!is_null($events['ESP'])) {
 	
-	send_LINE($events['ESP'],$groupId);
+	send_LINE($events['ESP'],$groupIdlog);
 		
 	
 	}
