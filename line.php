@@ -2,11 +2,7 @@
   
 function send_LINE($msg,$groupIdlog){
  $access_token = 'DGuuVccwqxYn+uroRdkiLBkYddWELZNxA03jZ36rKVwFpjutP9c56kLU8J9+Mf1/aS9Q4PoGYUEj7RKhjaIIoel4wRL35bQgbijVJBRe2LtiCZg3WX2VStSqATXMYVtSbowItcUApiUvxqKt1jqSTQdB04t89/1O/w1cDnyilFU='; 
-  $takeid = [
-    'type' => 'text',
-    'text' => $groupIdlog
-
-  ];
+ $id = (string)$groupIdlog;
   $messages = [
         'type' => 'text',
         'text' => $msg
@@ -16,8 +12,7 @@ function send_LINE($msg,$groupIdlog){
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
-
-        'to' => [$takeid],
+        'to' => $id,
         'messages' => [$messages],
       ];
       $post = json_encode($data);
