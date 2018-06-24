@@ -6,7 +6,7 @@ require("line.php");
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-
+$groupId;
 if (!is_null($events['events'])) {
 	echo "line bot";
 	// Loop through each event
@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 
 if (!is_null($events['ESP'])) {
 	
-	send_LINE($events['ESP']);
+	send_LINE($events['ESP'],$groupId);
 		
 	
 	}
