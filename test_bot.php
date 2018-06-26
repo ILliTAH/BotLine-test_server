@@ -20,7 +20,7 @@ if ( sizeof($request_array['events']) > 0 )
    if( $event['message']['type'] == 'text' )
    {
     $text = $event['message']['text'];
-    $gtext = $event['source']['groupId'];
+    $gtext = $event['source']['type'];
     $reply_message = 'groupId ของคุณคือ ('.$gtext.') ติดต่อ Host เพื่อปรับเปลี่ยน Resign Group';
    }
    else
